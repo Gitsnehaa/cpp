@@ -1,0 +1,111 @@
+1. Create a for loop that prints the square. Create a C++ program that takes an integer as input and prints whether it is positive, negative, or zero using `if-else` statements. 
+3. Write a program that takes the current time as input and prints a message based on whether it's morning, afternoon, evening, or night. 
+4. Develop a program that checks the availability of a product in a store. If the product is in stock(greater than 1) and the user has a valid membership, they can purchase it; otherwise, display an "Out of stock" message. 
+5. Create a basic ATM system where the user can withdraw money. Use if-else statements to check the account balance and handle withdrawal limits. 
+6. Write a for loop that prints numbers from 1 to 10. 
+7. Create a for loop that counts down from 10 to 1 and prints each number. 
+8. Write a for loop to print even numbers from 2 to 20. 
+9. Create a for loop to print the first 5 multiples of 3. 
+10. Write a for loop to calculate the sum of numbers from 1 to 10. 
+11. Write a program that checks if a given year is a leap year or not. Use an `if-else` statement and logical operators to make the determination.
+------------------------------------------------------------------------------------------------------------------------------------------------------------                           
+                                                        
+ 
+                                                                  ANSWERS
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+//1. Create a for loop that prints the square of numbers from 1 to 5.
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    for(int i=1; i<=5; i++)
+    {
+        cout<<pow(i,2)<<endl;
+    }
+    
+
+    return 0;
+}
+____________________________________________________________________________________
+//2. Create a C++ program that takes an integer as input and prints whether it is positive, negative, or zero using `if-else` statements. 
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    float integr;
+    cout<<"enter the number";
+    cin>>integr;
+    if(integr<0)
+    {
+        cout<<"nagative";
+    }
+    else if(integr>0)
+    {
+        cout<<"positive";
+    }
+    else if(integr==0)
+    {
+        cout<<"zero";
+    }
+    return 0;
+}
+_____________________________________________________________________________________________________________________________________________
+
+//3. Write a program that takes the current time as input and prints a message based on whether it's morning, afternoon, evening, or night.
+#include <bits/stdc++.h>
+using namespace std; 
+int main()
+{
+    // Get the current time point
+    auto currentTime = chrono::system_clock::now();
+
+    // Extract the current hour using std::chrono::hours and std::chrono::time_point_cast
+    auto currentHour = chrono::time_point_cast<chrono::hours>(currentTime);
+
+    // Get the count of hours since the epoch (1970-01-01 00:00:00 UTC)
+    auto hourSinceEpoch = chrono::duration_cast<chrono::hours>(currentHour.time_since_epoch());
+
+    // Extract the hour from the count of hours
+    int currentHourValue = hourSinceEpoch.count() % 24;
+    if(currentHourValue>=6 && currentHourValue<12)
+    {
+        cout<<"morning";
+    }
+    else if(currentHourValue>=12 && currentHourValue<=6)
+    {
+        cout<<"afternoon";
+    }
+    else if(currentHourValue>=7 && currentHourValue<=9)
+    {
+        cout<<"evening";
+    }
+    else {
+        cout<<"night";
+    }
+    return 0;
+}
+__________________________________________________________________________________________________________________________________________________
+/*4. Develop a program that checks the availability of a product in a store. 
+If the product is in stock(greater than 1) and the user has a valid membership,they can purchase it; otherwise, display an "Out of stock" message.*/ 
+#include <bits/stdc++.h>
+using namespace std; 
+int main()
+{
+    bool valid_membership;
+    int stock;
+    cout<<"enter the stock value: ";
+    cin>>stock;
+    cout<<"enter 1 if you have an valid membership otherwise enter 0: ";
+    cin>>valid_membership;
+    if(stock>1 && valid_membership)
+    {
+        cout<<"yes you can purchase";
+    }
+    else{
+        cout<<"sorry you can not purchase it";
+    }
+    
+    return 0;
+}
+_______________________________________________________________________________________________________________________________________________________________________
